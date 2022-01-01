@@ -18,14 +18,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) =>
       Consumer<AppState>(builder: (context, state, child) {
-        final AppModel model = state.model;
+        final AppModel appModel = state.model;
 
         return Scaffold(
           body: SafeArea(
             child: IndexedStack(
               index: _currentBottomBarItemIndex,
-              children: model.bottomBarItem
-                  .map((i) => PageWidget(pageId: i.data.pageId))
+              children: appModel.bottomBarItem
+                  .map((i) =>
+                      PageWidget(model: appModel.getPageModel(i.data.pageId)))
                   .toList(),
             ),
           ),
@@ -37,7 +38,7 @@ class _HomePageState extends State<HomePage> {
             onTap: (int index) {
               setState(() => _currentBottomBarItemIndex = index);
             },
-            items: model.bottomBarItem.map((i) => i.barItem).toList(),
+            items: appModel.bottomBarItem.map((i) => i.barItem).toList(),
           ),
         );
       });

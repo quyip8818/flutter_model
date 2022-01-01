@@ -2,6 +2,7 @@ import 'package:fixnum/fixnum.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_model/models/init/icons_db.dart';
+import 'package:flutter_model/models/page_model.dart';
 
 import 'data/app_data.dart';
 import 'data/page_data.dart';
@@ -19,7 +20,8 @@ class AppModel {
         leftMenuItem = toNavigationItem(
             _data.navigationItems, NavigationItemType.leftMenu);
 
-  PageData? getPage(Int64 pageId) => _pageDataMap[pageId];
+  PageModel getPageModel(Int64 pageId) =>
+      PageModel(data: _pageDataMap[pageId] ?? emptyPageData, appModel: this);
 
   static List<NavigationItem> toNavigationItem(
       List<NavigationItemData> data, NavigationItemType type) {

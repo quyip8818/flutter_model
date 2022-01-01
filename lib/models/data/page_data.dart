@@ -13,3 +13,9 @@ class PageData {
     this.title,
   });
 }
+
+const emptyPageData = PageData(
+  widgetDataList: [],
+  pageId: Int64.ZERO,
+  title: 'Empty Page',
+);
