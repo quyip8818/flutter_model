@@ -1,14 +1,13 @@
-
+import 'package:fixnum/fixnum.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_model/models/page_model.dart';
 
 class PageWidget extends StatelessWidget {
-  final PageModel model;
+  final Int64 pageId;
 
-  const PageWidget(this.model, {Key? key}) : super(key: key);
+  const PageWidget({required this.pageId, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    throw UnimplementedError();
+    return Text('Page $pageId');
   }
 }

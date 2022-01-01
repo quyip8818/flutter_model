@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:fixnum/fixnum.dart';
 import 'package:flutter_model/models/data/page_data.dart';
 
 class AppData {
@@ -14,7 +14,7 @@ class NavigationItemData implements Comparable<NavigationItemData> {
 
   final String label;
   final String iconName;
-  final int pageId;
+  final Int64 pageId;
 
   const NavigationItemData(
       {required this.type,

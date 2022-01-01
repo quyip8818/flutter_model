@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_model/widgets/page.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_model/states/app_state.dart';
 
 import 'models/app_model.dart';
-import 'models/data/app_data.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -24,7 +24,9 @@ class _HomePageState extends State<HomePage> {
           body: SafeArea(
             child: IndexedStack(
               index: _currentBottomBarItemIndex,
-              children: const [],
+              children: model.bottomBarItem
+                  .map((i) => PageWidget(pageId: i.data.pageId))
+                  .toList(),
             ),
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -39,6 +41,4 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       });
-
 }
-

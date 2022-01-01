@@ -1,35 +1,43 @@
-import 'package:flutter_model/models/data/app_data.dart';
+import 'package:fixnum/fixnum.dart';
 
-var bottomBarItems = [
-  const NavigationItemData(
+import 'package:flutter_model/models/data/app_data.dart';
+import 'package:flutter_model/models/data/page_data.dart';
+
+const bottomBarItems = [
+   NavigationItemData(
     type: NavigationItemType.bottomBar,
     order: 1,
     iconName: 'message',
     label: 'Message',
-    pageId: 1,
+    pageId: Int64.ONE,
   ),
-  const NavigationItemData(
+  NavigationItemData(
     type: NavigationItemType.bottomBar,
     order: 2,
     iconName: 'vpn_key',
     label: 'Rental',
-    pageId: 1,
+    pageId: Int64.TWO,
   ),
-  const NavigationItemData(
+  NavigationItemData(
     type: NavigationItemType.bottomBar,
     order: 3,
     iconName: 'home',
     label: 'Management',
-    pageId: 1,
+    pageId: Int64.ZERO,
   ),
-  const NavigationItemData(
+  NavigationItemData(
     type: NavigationItemType.bottomBar,
     order: 4,
     iconName: 'people',
     label: 'Community',
-    pageId: 1,
+    pageId: Int64.ZERO,
   )
 ];
 
+const pageDataList = [
+  PageData(pageId: Int64.ONE, widgetDataList: [], title: 'page1'),
+  PageData(pageId: Int64.TWO, widgetDataList: [], title: 'page2'),
+];
+
 var initAppData =
-    AppData(pageDataList: const [], navigationItems: bottomBarItems);
+    AppData(pageDataList: pageDataList, navigationItems: bottomBarItems);

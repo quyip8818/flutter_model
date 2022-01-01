@@ -1,4 +1,4 @@
-import 'dart:ffi';
+import 'package:fixnum/fixnum.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_model/models/init/icons_db.dart';
@@ -22,11 +22,10 @@ class AppModel {
   PageData? getPage(Int64 pageId) => _pageDataMap[pageId];
 
   static List<NavigationItem> toNavigationItem(
-          List<NavigationItemData> data, NavigationItemType type) =>
-      (data..sort())
-          .where((i) => i.type == type)
-          .map((d) => NavigationItem(d))
-          .toList();
+      List<NavigationItemData> data, NavigationItemType type) {
+    var items = data.where((i) => i.type == type).toList();
+    return (items..sort()).map((d) => NavigationItem(d)).toList();
+  }
 }
 
 class NavigationItem {
