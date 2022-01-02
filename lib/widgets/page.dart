@@ -13,11 +13,7 @@ class PageWidget extends StatelessWidget {
     var widgets = model.data.widgetDataList
         .map((d) => WidgetModel(data: d, pageModel: model))
         .map((m) => CommonWidget.create(m))
-        .map((w) => Container(
-              height: 50,
-              color: Colors.amber[600],
-              child: w,
-            ))
+        .map((w) => Container(child: w))
         .toList();
 
     return ListView(
