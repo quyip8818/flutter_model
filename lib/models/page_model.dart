@@ -3,11 +3,10 @@ import 'data/page_data.dart';
 
 class PageModel {
   final AppModel _appModel;
-  final PageData _data;
+  final PageData data;
 
-  PageModel({required PageData data, required AppModel appModel})
-      : _data = data,
-        _appModel = appModel;
+  PageModel({required this.data, required AppModel appModel})
+      : _appModel = appModel;
 
-  String get title => _data.title ?? 'Empty page';
+  String get title => data.title ?? 'Empty page';
 }

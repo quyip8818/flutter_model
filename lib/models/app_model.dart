@@ -15,15 +15,15 @@ class AppModel {
 
   AppModel(this._data)
       : _pageDataMap = {for (var d in _data.pageDataList) d.pageId: d},
-        bottomBarItem = toNavigationItem(
+        bottomBarItem = _toNavigationItem(
             _data.navigationItems, NavigationItemType.bottomBar),
-        leftMenuItem = toNavigationItem(
+        leftMenuItem = _toNavigationItem(
             _data.navigationItems, NavigationItemType.leftMenu);
 
   PageModel getPageModel(Int64 pageId) =>
       PageModel(data: _pageDataMap[pageId] ?? emptyPageData, appModel: this);
 
-  static List<NavigationItem> toNavigationItem(
+  static List<NavigationItem> _toNavigationItem(
       List<NavigationItemData> data, NavigationItemType type) {
     var items = data.where((i) => i.type == type).toList();
     return (items..sort()).map((d) => NavigationItem(d)).toList();

@@ -2,6 +2,7 @@ import 'package:flutter_model/models/data/widget_type.dart';
 
 class WidgetData {
   final WidgetType type;
+  final String? title;
 
-  WidgetData(this.type);
+  const WidgetData({required this.type, this.title});
 }
