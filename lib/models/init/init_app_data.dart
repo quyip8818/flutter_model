@@ -4,7 +4,7 @@ import 'package:flutter_model/models/data/app_data.dart';
 import 'package:flutter_model/models/data/page_data.dart';
 import 'package:flutter_model/models/data/widget_data.dart';
 import 'package:flutter_model/models/data/widget_type.dart';
-import 'package:flutter_model/widgets/card.dart';
+import 'package:flutter_model/widgets/navigation_card.dart';
 
 const bottomBarItems = [
   NavigationItemData(
@@ -38,14 +38,22 @@ const bottomBarItems = [
 ];
 
 const page1 = [
-  WidgetData(type: WidgetType.card, title: 'widget1'),
-  WidgetData(type: WidgetType.card, title: 'widget2'),
-  WidgetData(type: WidgetType.card, title: 'widget3'),
+  WidgetData(type: WidgetType.navigationCard, title: 'widget1'),
+  WidgetData(type: WidgetType.navigationCard, title: 'widget2'),
+  WidgetData(type: WidgetType.navigationCard, title: 'widget3'),
+  WidgetData(type: WidgetType.navigationCard, title: 'widget4'),
+  WidgetData(type: WidgetType.navigationCard, title: 'widget5'),
+];
+
+const page2 = [
+  WidgetData(type: WidgetType.navigationCard, title: 'X1'),
+  WidgetData(type: WidgetType.navigationCard, title: 'X2'),
+  WidgetData(type: WidgetType.navigationCard, title: 'X3'),
 ];
 
 const pageDataList = [
   PageData(pageId: Int64.ONE, widgetDataList: page1, title: 'page1'),
-  PageData(pageId: Int64.TWO, widgetDataList: [], title: 'page2'),
+  PageData(pageId: Int64.TWO, widgetDataList: page2, title: 'page2'),
 ];
 
 var initAppData =

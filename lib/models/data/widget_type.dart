@@ -1,3 +1,3 @@
 enum WidgetType {
-  card,
+  navigationCard,
 }
